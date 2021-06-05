@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>abc xyz</h1>
+    <div class="slidecontainer">
+        <input type="range" min="0" max="225" value="0" class="slider" id ="myRange">
+        <p><b>Value: <span id="demo"></span></b></p>
+        <p><b>Trang thai: <span id = "demo2"> </span></b></p>
+        <form name ="checked">
+        <input type="radio" name="trang-thai" value="On" id="on"> Bat<br>
+        <input type="radio" name="trang-thai" value="Off" id="off"> Tat<br>
+        </form>
+    </div>
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        var output2 = document.getElementById("demo2");
+        var trang_thai;
+        var on = document.getElementById("on");
+        var off = document.getElementById("off");
+        on.onclick = function(){
+            slider.value = 255;
+            trang_thai = "Bat";
+        }
+        off.onclick = function(){
+            slider.value = 0;
+            trang_thai = "Tat";
+        }
+        if(slider.value == 0){
+            off.checked = checked;
+            trang_thai = "Tat";
+        }
+        else{ trang_thai = "Bat";on.checked = cheked;}
+        output.innerHTML = slider.value;
+        output2.innerHTML = trang_thai; 
+        slider.oninput = function()
+        {
+            output.innerHTML = this.value;
+            if(slider.value == 0){
+            trang_thai = "Tat";
+            off.checked = checked;
+        }
+        else {trang_thai = "Bat";on.checked = checked;}
+        output2.innerHTML = trang_thai; 
+        
+        }
+    </script>
+</body>
+</html>
